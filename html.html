@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<!-- U lost? -->
+
+<head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Personal Website">
+    <meta name="keywords" content="Okan, mywebsite, programming">
+    <meta name="author" content="Okan Güclü">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+
+    <meta charset="utf-8">
+    <title>My Personal Website | Welcome</title>
+</head>
+
+<body id="body" onscroll="increaseProgressBars()" style="background-color: #e0dfdf">
+    <img id="subimg" src="img/okan/okan2.jpg">
+    <section>
+        <div class="containerImgText">
+            <h2 style="font-size: 60px; opacity: 0.5;">Welcome!</h1>
+            <button id="followPathButton">Follow the path</button>
+        </div>
+    </section>
+    <header>
+        <div class="container" id="container">
+            <nav>
+                <ul>
+                    <li><button id="aboutmeButton">About me</button></li>
+                    <li><button id="galleryButton">Gallery</button></li>
+                    <li><button id="skilButton">Skill</button></li>
+                </ul>
+            </nav>
+            <h2 style="margin: 0; padding: 0;" class="titleClass"><img src="img/logo2.png" width="50"
+                    height="50" align="middle" hspace="40"> <div style="color: orangered; display: inline-block;">Welcome</div> to my Story</h2>
+        </div>
+    </header>
+
+
+    <article>
+        <div class="containerAbout">
+            <div class="aboutmeBox">
+                <div id="aboutTitle">
+                    <h2>Who Am I?</h2>
+                </div>
+                <div id="AboutMeText">
+                    <strong>Hello! My name is Okan!</strong>
+                    <p> I am a 17 year old programmer that lives in Austria and programs for around 2-3 years.</p>
+                    <p> I do have a dream about being a programmer and work at a big company like Microsoft.</p>
+                    <p> Enjoy my website as much as i had enjoyed while creating it.</p>
+                </div>
+                <div id="contactFormContainer">
+                        <a href="https://www.instagram.com/o_kan18/"><img id="igImage" src="img/contactLogos/ig.png"></a>
+                        <a href="https://www.linkedin.com/in/okan-g%C3%BCcl%C3%BC-a635b6188/"><img id="liImage" src="img/contactLogos/linkedIn.png"></a>
+                        <a href="https://www.facebook.com/okan.guclu.3517"><img id="fbImage" src="img/contactLogos/facebook.png"></a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article>
+        <div class="galleryContainer">
+            <div id="galleryTitleContainer">
+                <div id="galleryContent">
+                    <strong style="font-size: 35px; color: darkslategray;">Gallery</strong>
+                    <p style="font-size: 20px;">This is the gallery that i officially own.</p>
+                    <p style="font-size: 20px;">It is just my photos. Nothing else.</p>
+                </div>
+            </div>
+            <div class="guiContainer">
+                <img src="img/okan/okan.jpg" alt="forest" id="mainImg">
+                <div class="guiArrow">
+                    <div id="forwardArrow" onclick="forwardSlide()"></div>
+                    <div id="backArrow" onclick="backSlide()"></div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article>
+        <div class="experienceContainer" style="background-color: #e0dfdf">
+            <div id="experienceTitleContainer">
+                <strong>Skill</strong>
+                <p id="subtitle">Based on the difficulty of the projects</p>
+                <p id="experienceText"><b>Since</b> no one learned programming directly from it's mother's womb<b>,</b> I also didn't<b>.</b>
+                    In fact<b>,</b> I <b>don't</b> even count myself as a <b>good</b> programmer<b>.</b> I count myself as a <b>good learner and a good interpreter.</b>
+                </p>
+                <p id="experienceText">I <b>constantly</b> learn something<b>.</b> Day by day I add new things to my mine of information <b>which</b>
+                    is a nice feeling to be honest with you<b>.</b>
+                </p>
+                <p id="experienceText" style="top: 5px;"><b>Believing that a person, without constantly learning, is living it's life in vain.</b></p>
+            </div>
+
+            
+            <div class="progress">
+                <ul>
+                    <strong id="jT">Java</strong>
+                    <li><div id="progressBarJ"><span><div id="jPercText"></div></span></div></li>
+                    <strong id="csT">C#</strong>
+                    <li><div id="progressBarCSharp"><div id="csharpPercText"></div></div></li>
+                    <strong id="cT">C++</strong>
+                    <li><div id="progressBarCPlus"><div id="cplusText"></div></div></li>
+                    <strong id="htmlT">HTML5</strong>
+                    <li><div id="progressBarHTML"> <div id="htmlText"></div></div></li>
+                    <strong id="jscriptT">JavaScript</strong>
+                    <li><div id="progressBarJScript"><div id="jscriptText"></div></div></li>
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    <article>
+        
+    </article>
+
+    <footer>
+        <h5 style="text-align: center;">Copyright &copy; 2019 Okan Güclü. All rights reserved. </h5>
+    </footer>
+
+</body>
+
+<script>
+    $(document).ready(function (){
+        window.scrollTo(0,0);
+    });
+
+    $("#followPathButton").click(function () {
+        $('html, body').animate({
+            scrollTop: $("footer").offset().top
+        }, 5000);
+    });
+
+    var imgArr = [];
+    var imgIndex = 0;
+    
+    var progressBarJ = document.getElementById("progressBarJ");
+    var jPercText = document.getElementById("jPercText");
+    var progressBarCSharp = document.getElementById("progressBarCSharp");
+    var csharpPercText = document.getElementById("csharpPercText");
+    var progressBarCPlus = document.getElementById("progressBarCPlus");
+    var cplusText = document.getElementById("cplusText");
+    var progressBarHTML = document.getElementById("progressBarHTML");
+    var htmlText = document.getElementById("htmlText");
+    var progressBarJScript = document.getElementById("progressBarJScript");
+    var jscriptText = document.getElementById("jscriptText");
+
+    var navBar = document.getElementById("container");
+    
+    var aboutmeButton = document.getElementById("aboutmeButton");
+    var galleryButton = document.getElementById("galleryButton");
+    var skillButton = document.getElementById("skilButton");
+    
+    var windowScrollY = 0;
+    var noProgress = false;
+
+    function increaseProgressBars(){
+        windowScrollY = document.documentElement.scrollTop;
+        if(windowScrollY > 900 && !noProgress){
+            progress(progressBarJ, 90, jPercText);
+            progress(progressBarCSharp, 70, csharpPercText);
+            progress(progressBarCPlus, 60, cplusText);
+            progress(progressBarHTML, 50, htmlText);
+            progress(progressBarJScript, 50, jscriptText);
+            noProgress = true;
+        }
+
+        if(windowScrollY > 200 && windowScrollY < 400){
+            if(galleryButton.style.color == "orangered"){
+                galleryButton.style.color = "black";
+            }
+
+            if(skillButton.style.color == "orangered"){
+                skillButton.style.color = "black";
+            }
+
+            aboutmeButton.style.color = "orangered";
+        }
+        else if(windowScrollY > 700 && windowScrollY < 1000){
+            if(aboutmeButton.style.color == "orangered"){
+                aboutmeButton.style.color = "black";
+            }
+
+            if(skillButton.style.color == "orangered"){
+                skillButton.style.color = "black";
+            }
+
+            galleryButton.style.color = "orangered";
+        }
+        else if(windowScrollY > 1000){
+            if(galleryButton.style.color == "orangered"){
+                galleryButton.style.color = "black";
+            }
+
+            if(aboutmeButton.style.color == "orangered"){
+                aboutmeButton.style.color = "black";
+            }
+
+            skillButton.style.color = "orangered";
+        }
+
+        if(windowScrollY > 950){
+            navBar.style.position = "fixed";
+            navBar.style.backgroundColor = "white";
+            navBar.style.width = 100 + "%";
+            navBar.style.opacity = 0.8;
+            navBar.style.top = 0;
+        }
+        else{
+            navBar.style.position = "relative";
+            navBar.style.opacity = "auto";
+        }
+    }
+
+    $("#aboutmeButton").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#aboutmeButton").offset().top - 500
+        }, 5000);
+    });
+    
+    $("#galleryButton").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#galleryButton").offset().top
+        }, 5000);
+    });
+
+    $("#skilButton").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#skilButton").offset().top + 400
+        }, 5000);
+    });
+    
+    imgArr[0] = "img/okan/okan.jpg";
+
+    function backSlide(){
+        var currImage = document.getElementById("mainImg");
+
+        if(imgIndex == imgArr.length - 1){
+            imgIndex = 0;
+        }
+        else{
+            imgIndex++;
+        }
+        currImage.src = imgArr[imgIndex];
+    }
+
+    function forwardSlide(){
+        var currImage = document.getElementById("mainImg");
+        if(imgIndex == 0){
+            imgIndex = imgArr.length - 1;
+        }
+        else{
+         imgIndex--;
+        }
+        currImage.src = imgArr[imgIndex];
+    }
+   
+    function progress(bar, skillAmount, text){
+        var progress = 0;
+        var loop = setInterval(increment, 15);
+
+        function increment(){
+            if(progress >= skillAmount){
+                progress = 0;
+                clearInterval(loop);
+            }
+            else{
+                progress++;
+                bar.style.width = progress + "%";
+                var rect = text.getBoundingClientRect();
+                text.innerHTML = progress + "%";
+            }
+        }
+    }
+
+</script>
+</html>
